@@ -9,86 +9,6 @@
  * Show Activity Indicator
  */
 
-- (void)show:(CDVInvokedUrlCommand*)command
-{
-	NSString* type = [command.arguments objectAtIndex:0];
-    bool dim = [[command.arguments objectAtIndex:1] boolValue];
-    NSString* text = [command.arguments objectAtIndex:2];
-    NSString* detail = [command.arguments objectAtIndex:3];
-    
-    self.activityIndicator = nil;
-	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
-    
-    
-    // Check for dim : true ? false
-    
-    if (dim == true) {
-        self.activityIndicator.dimBackground = YES;
-    }
-    else if (dim == false) {
-        self.activityIndicator.dimBackground = NO;
-    }
-    
-    if ([type isEqual: @"indeterminate-simple"]) {
-        self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
-    }
-    
-    else if ([type isEqual: @"indeterminate-label"] && [text length] != 0) {
-        self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
-        self.activityIndicator.labelText = text;
-    }
-    
-    else if ([type isEqual: @"indeterminate-label-detail"] && [text length] != 0 && [detail length] != 0) {
-        self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
-        self.activityIndicator.labelText = text;
-        self.activityIndicator.detailsLabelText = detail;
-        self.activityIndicator.square = YES;
-    }
-    
-    else if ([type isEqual: @"determinate"]) {
-        self.activityIndicator.mode = MBProgressHUDModeDeterminate;
-    }
-    
-    else if ([type isEqual: @"determinate-label"] && [text length] != 0) {
-        self.activityIndicator.mode = MBProgressHUDModeDeterminate;
-        self.activityIndicator.labelText = text;
-    }
-    
-    else if ([type isEqual: @"determinate-annular"]) {
-        self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
-    }
-    
-    else if ([type isEqual: @"determinate-annular-label"] && [text length] != 0) {
-        self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
-        self.activityIndicator.labelText = text;
-    }
-    
-    else if ([type isEqual: @"determinate-bar"]) {
-        self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
-    }
-    
-    else if ([type isEqual: @"determinate-bar-label"] && [text length] != 0) {
-        self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
-        self.activityIndicator.labelText = text;
-    }
-    
-    else if ([type isEqual: @"success"]) {
-        self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
-    }
-    
-    else {
-        CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"invalid duration. valid options are 'short' and 'long'"];
-        [self writeJavascript:[pluginResult toErrorCallbackString:command.callbackId]];
-        return;
-    }
-    
-    
-    
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
-
 
 - (void)showSimple:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
@@ -163,6 +83,8 @@
 
 -(void)showDeterminate:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
+    int increment = [[command.arguments objectAtIndex:1] intValue];
+    NSNumber* incrementValue = @(increment);
     
     self.activityIndicator = nil;
 	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
@@ -177,13 +99,17 @@
         self.activityIndicator.dimBackground = NO;
     }
     
+    [self.activityIndicator showWhileExecuting:@selector(progressTask:) onTarget:self withObject:incrementValue animated:YES];
+    
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 -(void)showDeterminateWithLabel:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
-    NSString* text = [command.arguments objectAtIndex:1];
+    int increment = [[command.arguments objectAtIndex:1] intValue];
+    NSNumber* incrementValue = @(increment);
+    NSString* text = [command.arguments objectAtIndex:2];
 
     self.activityIndicator = nil;
 	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
@@ -198,6 +124,9 @@
         self.activityIndicator.dimBackground = NO;
     }
     
+    [self.activityIndicator showWhileExecuting:@selector(progressTask:) onTarget:self withObject:incrementValue animated:YES];
+
+    
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
@@ -206,6 +135,8 @@
 
 - (void)showDeterminateAnnular:(CDVInvokedUrlCommand *)command  {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
+    int increment = [[command.arguments objectAtIndex:1] intValue];
+    NSNumber* incrementValue = @(increment);
     
     self.activityIndicator = nil;
 	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
@@ -219,6 +150,35 @@
         self.activityIndicator.dimBackground = NO;
     }
     
+    [self.activityIndicator showWhileExecuting:@selector(progressTask:) onTarget:self withObject:incrementValue animated:YES];
+
+    
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)showDeterminateAnnularWithLabel:(CDVInvokedUrlCommand *)command  {
+    bool dim = [[command.arguments objectAtIndex:0] boolValue];
+    int increment = [[command.arguments objectAtIndex:1] intValue];
+    NSNumber* incrementValue = @(increment);
+    NSString* text = [command.arguments objectAtIndex:2];
+    
+    self.activityIndicator = nil;
+	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
+    self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
+    self.activityIndicator.labelText = text;
+    
+    // Check for dim : true ? false
+    if (dim == true) {
+        self.activityIndicator.dimBackground = YES;
+    }
+    else if (dim == false) {
+        self.activityIndicator.dimBackground = NO;
+    }
+    
+    [self.activityIndicator showWhileExecuting:@selector(progressTask:) onTarget:self withObject:incrementValue animated:YES];
+    
+    
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
@@ -226,6 +186,8 @@
 
 - (void)showDeterminateBar:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
+    int increment = [[command.arguments objectAtIndex:1] intValue];
+    NSNumber* incrementValue = @(increment);
     
     self.activityIndicator = nil;
 	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
@@ -240,12 +202,45 @@
         self.activityIndicator.dimBackground = NO;
     }
     
+    [self.activityIndicator showWhileExecuting:@selector(progressTask:) onTarget:self withObject:incrementValue animated:YES];
+    
+    
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)showDeterminateBarWithLabel:(CDVInvokedUrlCommand *)command {
+    bool dim = [[command.arguments objectAtIndex:0] boolValue];
+    int increment = [[command.arguments objectAtIndex:1] intValue];
+    NSNumber* incrementValue = @(increment);
+    NSString* text = [command.arguments objectAtIndex:2];
+
+    
+    self.activityIndicator = nil;
+	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
+    self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
+    self.activityIndicator.labelText = text;
+    
+    
+    // Check for dim : true ? false
+    if (dim == true) {
+        self.activityIndicator.dimBackground = YES;
+    }
+    else if (dim == false) {
+        self.activityIndicator.dimBackground = NO;
+    }
+    
+    [self.activityIndicator showWhileExecuting:@selector(progressTask:) onTarget:self withObject:incrementValue animated:YES];
+    
+    
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+
 -(void)showSuccess:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
+    NSString* text = [command.arguments objectAtIndex:1];
     
     self.activityIndicator = nil;
 	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
@@ -254,6 +249,7 @@
 
     
     self.activityIndicator.mode = MBProgressHUDModeCustomView;
+    self.activityIndicator.labelText = text;
     
     
     // Check for dim : true ? false
@@ -286,7 +282,16 @@
 
 
 
-- (void)progressTask {
+- (void)progressTask:(NSNumber *)increment{
+    
+    int _increment = [increment intValue];
+    
+    float progress = 0.0f;
+	while (progress < 1.0f) {
+		progress += 0.01f;
+		self.activityIndicator.progress = progress;
+		usleep(_increment);
+	}
     
 }
 
