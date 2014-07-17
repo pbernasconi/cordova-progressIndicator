@@ -26,25 +26,21 @@
     else if (dim == false) {
         self.activityIndicator.dimBackground = NO;
     }
-    else {
-        CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"invalid dim value. valid options are 'true' and 'false'"];
-        [self writeJavascript:[pluginResult toErrorCallbackString:command.callbackId]];
-        return;
-    }
+    else {    }
     
     if ([type isEqual: @"indeterminate-simple"]) {
         self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
     }
     
-    else if ([type isEqual: @"indeterminate-label"] ) {
+    else if ([type isEqual: @"indeterminate-label"] && [label length] != 0) {
+        self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
+        self.activityIndicator.labelText = text;
+    }
+    
+    else if ([type isEqual: @"indeterminate-label-detail"] && [label length] != 0 && [detail length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
         self.activityIndicator.labelText = text;
         self.activityIndicator.detailsLabelText = detail;
-    }
-    
-    else if ([type isEqual: @"indeterminate-label-detail"]) {
-        self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
-        self.activityIndicator.labelText = text;
         self.activityIndicator.square = YES;
     }
     
@@ -52,7 +48,7 @@
         self.activityIndicator.mode = MBProgressHUDModeDeterminate;
     }
     
-    else if ([type isEqual: @"determinate-label"] && ![label length] == 0) {
+    else if ([type isEqual: @"determinate-label"] && [label length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeDeterminate;
         self.activityIndicator.labelText = text;
     }
@@ -61,7 +57,7 @@
         self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
     }
     
-    else if ([type isEqual: @"determinate-annular-label"]) {
+    else if ([type isEqual: @"determinate-annular-label"] && [label length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
         self.activityIndicator.labelText = text;
     }
@@ -70,7 +66,7 @@
         self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
     }
     
-    else if ([type isEqual: @"determinate-bar-label"]) {
+    else if ([type isEqual: @"determinate-bar-label"] && [label length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
         self.activityIndicator.labelText = text;
     }
