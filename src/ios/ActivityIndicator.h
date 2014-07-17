@@ -9,6 +9,7 @@
 - (void)showSimple:(CDVInvokedUrlCommand*)command;
 - (void)showSimpleWithLabel:(CDVInvokedUrlCommand*)command;
 - (void)showSimpleWithLabelDetail:(CDVInvokedUrlCommand*)command;
+- (void)showText:(CDVInvokedUrlCommand*)command;
 - (void)showDeterminate:(CDVInvokedUrlCommand*)command;
 - (void)showDeterminateWithLabel:(CDVInvokedUrlCommand*)command;
 - (void)showDeterminateAnnular:(CDVInvokedUrlCommand*)command;
