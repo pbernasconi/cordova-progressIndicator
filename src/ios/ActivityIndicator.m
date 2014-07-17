@@ -37,12 +37,12 @@
         self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
     }
     
-    else if ([type isEqual: @"indeterminate-label"] && [label length] != 0) {
+    else if ([type isEqual: @"indeterminate-label"] && [text length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
         self.activityIndicator.labelText = text;
     }
     
-    else if ([type isEqual: @"indeterminate-label-detail"] && [label length] != 0 && [detail length] != 0) {
+    else if ([type isEqual: @"indeterminate-label-detail"] && [text length] != 0 && [detail length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
         self.activityIndicator.labelText = text;
         self.activityIndicator.detailsLabelText = detail;
@@ -53,7 +53,7 @@
         self.activityIndicator.mode = MBProgressHUDModeDeterminate;
     }
     
-    else if ([type isEqual: @"determinate-label"] && [label length] != 0) {
+    else if ([type isEqual: @"determinate-label"] && [text length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeDeterminate;
         self.activityIndicator.labelText = text;
     }
@@ -62,7 +62,7 @@
         self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
     }
     
-    else if ([type isEqual: @"determinate-annular-label"] && [label length] != 0) {
+    else if ([type isEqual: @"determinate-annular-label"] && [text length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeAnnularDeterminate;
         self.activityIndicator.labelText = text;
     }
@@ -71,7 +71,7 @@
         self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
     }
     
-    else if ([type isEqual: @"determinate-bar-label"] && [label length] != 0) {
+    else if ([type isEqual: @"determinate-bar-label"] && [text length] != 0) {
         self.activityIndicator.mode = MBProgressHUDModeDeterminateHorizontalBar;
         self.activityIndicator.labelText = text;
     }
