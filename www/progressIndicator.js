@@ -1,16 +1,16 @@
-var ActivityIndicator = {
+var ProgressIndicator = {
   show: function (type, dim, label, detail) {
     dim = dim || false;
     label = label || "Please wait...";
     detail = detail || '';
 
-    cordova.exec(null, null, "ActivityIndicator", "show", [type, dim, label, detail]);
+    cordova.exec(null, null, "ProgressIndicator", "show", [type, dim, label, detail]);
   },
 
 
   showSimple: function (dim) {
     dim = dim || false;
-    cordova.exec(null, null, "ActivityIndicator", "showSimple", [dim]);
+    cordova.exec(null, null, "ProgressIndicator", "showSimple", [dim]);
 
   },
 
@@ -18,7 +18,7 @@ var ActivityIndicator = {
     dim = dim || false;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showSimpleWithLabel", [dim, label]);
+    cordova.exec(null, null, "ProgressIndicator", "showSimpleWithLabel", [dim, label]);
   },
 
   showSimpleWithLabelDetail: function (dim, label, detail) {
@@ -26,13 +26,13 @@ var ActivityIndicator = {
     label = label || "Please wait...";
     detail = detail || "Loading";
 
-    cordova.exec(null, null, "ActivityIndicator", "showSimpleWithLabelDetail", [dim, label, detail]);
+    cordova.exec(null, null, "ProgressIndicator", "showSimpleWithLabelDetail", [dim, label, detail]);
   },
 
   showDeterminate: function (dim, timeout) {
     dim = dim || false;
     timeout = timeout || 50000;
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminate", [dim, timeout]);
+    cordova.exec(null, null, "ProgressIndicator", "showDeterminate", [dim, timeout]);
   },
 
   showDeterminateWithLabel: function (dim, timeout, label) {
@@ -40,13 +40,13 @@ var ActivityIndicator = {
     timeout = timeout || 50000;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateWithLabel", [dim, timeout, label]);
+    cordova.exec(null, null, "ProgressIndicator", "showDeterminateWithLabel", [dim, timeout, label]);
   },
 
   showDeterminateAnnular: function (dim, timeout) {
     dim = dim || false;
     timeout = timeout || 50000;
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateAnnular", [dim, timeout]);
+    cordova.exec(null, null, "ProgressIndicator", "showDeterminateAnnular", [dim, timeout]);
   },
 
   showDeterminateAnnularWithLabel: function (dim, timeout, label) {
@@ -54,14 +54,14 @@ var ActivityIndicator = {
     timeout = timeout || 50000;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateAnnularWithLabel", [dim, timeout, label]);
+    cordova.exec(null, null, "ProgressIndicator", "showDeterminateAnnularWithLabel", [dim, timeout, label]);
   },
 
   showDeterminateBar: function (dim, timeout) {
     dim = dim || false;
     timeout = timeout || 50000;
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateBar", [dim, timeout]);
+    cordova.exec(null, null, "ProgressIndicator", "showDeterminateBar", [dim, timeout]);
   },
 
   showDeterminateBarWithLabel: function (dim, timeout, label) {
@@ -69,20 +69,29 @@ var ActivityIndicator = {
     timeout = timeout || 50000;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateBarWithLabel", [dim, timeout, label]);
+    cordova.exec(null, null, "ProgressIndicator", "showDeterminateBarWithLabel", [dim, timeout, label]);
   },
+
 
   showSuccess: function (dim, label) {
     dim = dim || false;
     label = label || "Success";
 
-    cordova.exec(null, null, "ActivityIndicator", "showSuccess", [dim, label]);
+    cordova.exec(null, null, "ProgressIndicator", "showSuccess", [dim, label]);
+  },
+
+  showText: function (dim, label, position) {
+    dim = dim || false;
+    label = label || "Success";
+    position = position || "bottom";
+
+    cordova.exec(null, null, "ProgressIndicator", "showText", [dim, label, position]);
   },
 
 
   hide: function () {
-    cordova.exec(null, null, "ActivityIndicator", "hide", []);
+    cordova.exec(null, null, "ProgressIndicator", "hide", []);
   }
 };
 
-module.exports = ActivityIndicator;
+module.exports = ProgressIndicator;

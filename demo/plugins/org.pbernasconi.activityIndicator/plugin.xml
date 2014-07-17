@@ -13,7 +13,7 @@
     <keywords>activity,indicator,loading,spinner</keywords>
     <license>Apache 2.0 License</license>
 
-    <js-module src="www/activityIndicator.js" name="ActivityIndicator">
+    <js-module src="www/progressIndicator.js" name="ActivityIndicator">
         <clobbers target="ActivityIndicator"/>
     </js-module>
 

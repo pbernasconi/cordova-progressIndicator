@@ -3,7 +3,7 @@
 #import "MBProgressHUD.h"
 
 @implementation ActivityIndicator
-@synthesize activityIndicator;
+@synthesize ctivityIndicator;
 
 /**
  * Show Activity Indicator
