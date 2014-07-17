@@ -29,41 +29,47 @@ var ActivityIndicator = {
     cordova.exec(null, null, "ActivityIndicator", "showSimpleWithLabelDetail", [dim, label, detail]);
   },
 
-  showDeterminate: function (dim) {
+  showDeterminate: function (dim, timeout) {
     dim = dim || false;
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminate", [dim]);
+    timeout = timeout || 50000;
+    cordova.exec(null, null, "ActivityIndicator", "showDeterminate", [dim, timeout]);
   },
 
-  showDeterminateWithLabel: function (dim, label) {
+  showDeterminateWithLabel: function (dim, timeout, label) {
     dim = dim || false;
+    timeout = timeout || 50000;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateWithLabel", [dim, label]);
+    cordova.exec(null, null, "ActivityIndicator", "showDeterminateWithLabel", [dim, timeout, label]);
   },
 
-  showDeterminateAnnular: function (dim) {
+  showDeterminateAnnular: function (dim, timeout) {
     dim = dim || false;
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateAnnular", [dim]);
+    timeout = timeout || 50000;
+    cordova.exec(null, null, "ActivityIndicator", "showDeterminateAnnular", [dim, timeout]);
   },
 
-  showDeterminateAnnularWithLabel: function (dim, label) {
+  showDeterminateAnnularWithLabel: function (dim, timeout, label) {
     dim = dim || false;
+    timeout = timeout || 50000;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateAnnularWithLabel", [dim, label]);
+    cordova.exec(null, null, "ActivityIndicator", "showDeterminateAnnularWithLabel", [dim, timeout, label]);
   },
 
-  showDeterminateBar: function (dim) {
+  showDeterminateBar: function (dim, timeout) {
     dim = dim || false;
+    timeout = timeout || 50000;
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateBar", [dim]);
+    cordova.exec(null, null, "ActivityIndicator", "showDeterminateBar", [dim, timeout]);
   },
 
-  showDeterminateBarWithLabel: function (dim, label) {
+  showDeterminateBarWithLabel: function (dim, timeout, label) {
     dim = dim || false;
+    timeout = timeout || 50000;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ActivityIndicator", "showDeterminateBarWithLabel", [dim, label]);
+    cordova.exec(null, null, "ActivityIndicator", "showDeterminateBarWithLabel", [dim, timeout, label]);
   },
 
   showSuccess: function (dim, label) {
@@ -72,8 +78,6 @@ var ActivityIndicator = {
 
     cordova.exec(null, null, "ActivityIndicator", "showSuccess", [dim, label]);
   },
-
-
 
 
   hide: function () {

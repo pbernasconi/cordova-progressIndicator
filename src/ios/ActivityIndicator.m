@@ -10,6 +10,9 @@
  */
 
 
+/**
+ * SIMPLE
+ */
 - (void)showSimple:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
     
@@ -29,7 +32,9 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-
+/**
+ * SIMPLE with LABEL
+ */
 - (void)showSimpleWithLabel:(CDVInvokedUrlCommand *)command {
     
     // add functionality for color + font
@@ -55,6 +60,9 @@
 
 }
 
+/**
+ * SIMPLE with LABEL and DETAIL
+ */
 - (void)showSimpleWithLabelDetail:(CDVInvokedUrlCommand *)command   {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
     NSString* text = [command.arguments objectAtIndex:1];
@@ -81,6 +89,9 @@
 }
 
 
+/**
+ * DETERMINATE
+ */
 -(void)showDeterminate:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
     int increment = [[command.arguments objectAtIndex:1] intValue];
@@ -105,6 +116,9 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+/**
+ * DETERMINATE
+ */
 -(void)showDeterminateWithLabel:(CDVInvokedUrlCommand *)command {
     bool dim = [[command.arguments objectAtIndex:0] boolValue];
     int increment = [[command.arguments objectAtIndex:1] intValue];
