@@ -12,7 +12,7 @@
 - (void)show:(CDVInvokedUrlCommand*)command
 {
 	NSString* type = [command.arguments objectAtIndex:0];
-    BOOL* dim = [command.arguments objectAtIndex:1];
+    bool dim = [[command.arguments objectAtIndex:1] boolValue];
     NSString* text = [command.arguments objectAtIndex:2];
     NSString* detail = [command.arguments objectAtIndex:3];
     
@@ -20,13 +20,18 @@
 	self.activityIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
     
     
+    // Check for dim : true ? false
+    
     if (dim == true) {
         self.activityIndicator.dimBackground = YES;
     }
     else if (dim == false) {
         self.activityIndicator.dimBackground = NO;
     }
-    else {    }
+    
+    
+    
+    // Check for types
     
     if ([type isEqual: @"indeterminate-simple"]) {
         self.activityIndicator.mode = MBProgressHUDModeIndeterminate;
