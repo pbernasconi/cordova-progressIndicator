@@ -20,26 +20,16 @@ The Docs are situated at [http://pbernasconi.github.io/cordova-progressIndicator
 
 iOS
 
-![ScreenShot](demo/screenshots/simple-large-img.jpg =100x)
+![ScreenShot](demo/screenshots/simple-large-img.jpg )
 
-|Simple|Label|Label-Detail|
-|------|-----|------------|
-|![](demo/screenshots/simple.jpg =50x)|![](demo/screenshots/simple-label.jpg =50x)|![](demo/screenshots/simple-label-detail.jpg =50x)|
-
-
-|Determinate|Determinate Label|Annular|Annular Label|
-|-----------|-----------------|-------|-------------|
-|![](demo/screenshots/determinate-simple.jpg)|![](demo/screenshots/determinate-label.jpg)|![](demo/screenshots/annular-simple.jpg)|![](demo/screenshots/annular-label.jpg)
+|Simple|Label|Label-Detail|Success|Text Top|Text Botom|
+|------|-----|------------|-------|--------|----------|
+|![](demo/screenshots/simple.jpg)|![](demo/screenshots/simple-label.jpg)|![](demo/screenshots/simple-label-detail.jpg)|![](demo/screenshots/success.jpg)|![](demo/screenshots/text-top.jpg)|![](demo/screenshots/text-bottom.jpg)
 
 
-|Bar|Bar Label|
-|---|---------|
-|![](demo/screenshots/bar-simple.jpg)|![](demo/screenshots/bar-label.jpg)
-
-|Success|Text Top|Text Botom|
-|---|---|--|
-|![](demo/screenshots/success.jpg)|![](demo/screenshots/text-top.jpg)|![](demo/screenshots/text-bottom.jpg)
-
+|Determinate|Determinate Label|Annular|Annular Label|Bar|Bar Label|
+|-----------|-----------------|-------|-------------|---|---------
+|![](demo/screenshots/determinate-simple.jpg)|![](demo/screenshots/determinate-label.jpg)|![](demo/screenshots/annular-simple.jpg)|![](demo/screenshots/annular-label.jpg)|![](demo/screenshots/bar-simple.jpg)|![](demo/screenshots/bar-label.jpg)
 
 
 
