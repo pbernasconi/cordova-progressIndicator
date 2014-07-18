@@ -70,7 +70,7 @@ ProgressIndicator.hide()
 Simple
 ------------
 
-### .showSimple()
+#### .showSimple()
 Simple usage with no text.  Requires manual `hide()`.
 
 ```javascript
@@ -89,7 +89,7 @@ ProgressIndicator.hide()
 ```
 
 
-### .showSimpleWithLabel()
+#### .showSimpleWithLabel()
 Simple usage with a label. Requires manual `hide()`.
 
 
@@ -110,7 +110,7 @@ ProgressIndicator.hide()
 
 
 
-### .showSimpleWithLabelDetail()
+#### .showSimpleWithLabelDetail()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
@@ -133,7 +133,7 @@ ProgressIndicator.hide()
 ## Determinate
 
 
-### .showDeterminate()
+#### .showDeterminate()
 Simple usage with a label or with label and detail. Hides automatically, upon timeout completion.
 
 ```javascript
@@ -149,7 +149,7 @@ ProgressIndicator.showDeterminate(false, 100000)
 
 
 
-### .showDeterminateWithLabel()
+#### .showDeterminateWithLabel()
 Simple usage with a label or with label and detail. Hides automatically, upon timeout completion.
 
 ```javascript
@@ -168,7 +168,7 @@ ProgressIndicator.showDeterminateWithLabel(false, 50000, 'Loading...')
 
 ## Annular
 
-### .showAnnular()
+#### .showAnnular()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
@@ -185,7 +185,7 @@ ProgressIndicator.showAnnular(false, 100000)
 
 
 
-### .showAnnularWithLabel()
+#### .showAnnularWithLabel()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
@@ -204,7 +204,7 @@ ProgressIndicator.showAnnularWithLabel(false, 50000, "Loading...")
 
 ## Bar
 
-### .showBar()
+#### .showBar()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
@@ -222,7 +222,7 @@ ProgressIndicator.showBar(false, 100000)
 
 
 
-### .showBarWithLabel()
+#### .showBarWithLabel()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
@@ -242,7 +242,7 @@ ProgressIndicator.showBarWithLabel(false, 50000, "Loading...")
 
 ## Others
 
-### .showSuccess()
+#### .showSuccess()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
@@ -262,7 +262,7 @@ ProgressIndicator.showSuccess(false)
 ProgressIndicator.hide()
 ```
 
-### .showText()
+#### .showText()
 Simple usage with a label or with label and detail. Requires manual `hide()`.
 
 ```javascript
