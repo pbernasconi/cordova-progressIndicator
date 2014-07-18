@@ -1,6 +1,8 @@
+PROGRESS INDICATOR Plugin
+==========================
 
 Description
-================
+==========
 
 This plugin allows you to show a native *Progress Indicator* on iOS.
 There are several types of indicators available:
