@@ -20,11 +20,11 @@ The Docs are situated at [http://pbernasconi.github.io/cordova-progressIndicator
 
 iOS
 
-![ScreenShot](demo/screenshots/simple-large-img.jpg =100)
+![ScreenShot](demo/screenshots/simple-large-img.jpg =100x)
 
 |Simple|Label|Label-Detail|
 |------|-----|------------|
-|![](demo/screenshots/simple.jpg =50)|![](demo/screenshots/simple-label.jpg =50)|![](demo/screenshots/simple-label-detail.jpg =50)|
+|![](demo/screenshots/simple.jpg =50x)|![](demo/screenshots/simple-label.jpg =50x)|![](demo/screenshots/simple-label-detail.jpg =50x)|
 
 
 |Determinate|Determinate Label|Annular|Annular Label|
