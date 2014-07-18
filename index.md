@@ -9,8 +9,8 @@ There are several types of indicators available:
 * [Determinate](#determinate)
 * [Annular](#annular)
 * [Bar](#bar)
-* [Success](#showsuccess)
-* [Simple Text](#showtext)
+* [Success](#others)
+* [Simple Text](#others)
 
 This plugin is a cordova-port of the original [MBProgressHUD](https://github.com/jdg/MBProgressHUD) library for iOS.
 
@@ -23,6 +23,9 @@ Installation
 ### Platforms
 
 Currently **this plugin supports iOS**, with plans to *soon* implement Android.
+
+* **iOS**
+* *Android coming soon*
 
 
 ### Automatically
