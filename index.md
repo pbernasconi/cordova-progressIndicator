@@ -32,12 +32,12 @@ Currently **this plugin supports iOS**, with plans to *soon* implement Android.
 
 **Cordova** - To install this plugin simply type into the command line: (If you don't have the cordova CLI install using `npm install -g cordova`)
 ```bash
-cordova plugin add https://github.com/pbernasconi/cordova-progressIndicator.git
+cordova plugin add org.pbernasconi.progressindicator
 ```
 
 **PhoneGap** - Installing this plugin is just as easy and requires this command:
 ```bash
-phonegap local plugin add https://github.com/pbernasconi/cordova-progressIndicator.git
+phonegap local plugin add org.pbernasconi.progressindicator
 ```
 
 
