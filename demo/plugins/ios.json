@@ -21,7 +21,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"ActivityIndicator\"><param name=\"ios-package\" value=\"ActivityIndicator\" /></feature>",
+                            "xml": "<feature name=\"ProgressIndicator\"><param name=\"ios-package\" value=\"ProgressIndicator\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -39,7 +39,7 @@
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.ionicframework.demo962822"
         },
-        "org.pbernasconi.activityIndicator": {
+        "org.pbernasconi.progressIndicator": {
             "PACKAGE_NAME": "com.ionicframework.demo962822"
         }
     },
