@@ -12,6 +12,8 @@ There are several types of indicators available:
 * [Success](#showsuccess)
 * [Simple Text](#showtext)
 
+This plugin is a cordova-port of the original [MBProgressHUD](https://github.com/jdg/MBProgressHUD) library for iOS.
+
 
 
 Installation
@@ -20,7 +22,7 @@ Installation
 
 ### Platforms
 
-Current **this plugin supports iOS**, with plans to soon implement Android.
+Currently **this plugin supports iOS**, with plans to *soon* implement Android.
 
 
 ### Automatically
@@ -55,23 +57,32 @@ When a solution as simple as a one-liner CLI command is available, there is no p
 Usage
 =============
 
-Using this Plugin is very simple. Once installed, you can call any type of indicator with `ProgressIndicator.*`
+Using this Plugin is very simple. Once installed, you can call any type of indicator with **`ProgressIndicator.*`**
 
 ```javascript
 ProgressIndicator.*
 ```
 
-The `Simple` and `Success` indicators require the `.hide()` method to hide the window and allow the user to interact with the screen again. However, the `.hide()` method can be called at any moment with any indicator type.
+The `Simple`, `Text` and `Success` indicators require the **`.hide()`** method to hide the window and allow the user to interact with the screen again. 
+However, the **`.hide()`** method can be called at any moment with any indicator type.
 
 ```javascript
 ProgressIndicator.hide()
 ```
 
+Each Indicator has a **`dim`** parameter which is either **`true`** or **`false`**. If **`true`**, it will dim and darken the background of the Progress Indicator. 
+The default value is **`false`**.
+
+```javascript
+ProgressIndicator.*(true / false)
+```
+
+
 Simple
 ------------
 
 #### .showSimple()
-Simple usage with no text.  Requires manual `hide()`.
+Simple spinner with no text.  Requires `.hide()`.
 
 ```javascript
 ProgressIndicator.showSimple(true)
@@ -90,7 +101,7 @@ ProgressIndicator.hide()
 
 
 #### .showSimpleWithLabel()
-Simple usage with a label. Requires manual `hide()`.
+Simple spinner dialog with a label. Requires `.hide()`.
 
 
 ```javascript
@@ -102,7 +113,7 @@ ProgressIndicator.showSimpleWithLabel(false, 'Loading...')
 > Param      |Type      |Default |Desc
 > -----------|----------|--------|-----
 > **dim**    |*BOOL*    |false   | Dim Background
-> **label**  |*String*  | *null* | Label text
+> **label**  |*STRING*  | *null* | Label text
 
 ```javascript
 ProgressIndicator.hide()
@@ -111,7 +122,7 @@ ProgressIndicator.hide()
 
 
 #### .showSimpleWithLabelDetail()
-Simple usage with a label or with label and detail. Requires manual `hide()`.
+Simple spinner dialog with a label and detail text. Requires  `.hide()`.
 
 ```javascript
 ProgressIndicator.showSimpleWithLabelDetail(false, 'Loading...', 'Refreshing list')
@@ -132,9 +143,8 @@ ProgressIndicator.hide()
 
 ## Determinate
 
-
 #### .showDeterminate()
-Simple usage with a label or with label and detail. Hides automatically, upon timeout completion.
+A blank Determinate spinner. The `timeout` parameter uses microseconds for each increment. Hides automatically, upon `timeout` completion.
 
 ```javascript
 ProgressIndicator.showDeterminate(false, 100000)
@@ -150,7 +160,7 @@ ProgressIndicator.showDeterminate(false, 100000)
 
 
 #### .showDeterminateWithLabel()
-Simple usage with a label or with label and detail. Hides automatically, upon timeout completion.
+A Determinate spinner with a label. Hides automatically, upon `timeout` completion.
 
 ```javascript
 ProgressIndicator.showDeterminateWithLabel(false, 50000, 'Loading...')
@@ -169,7 +179,7 @@ ProgressIndicator.showDeterminateWithLabel(false, 50000, 'Loading...')
 ## Annular
 
 #### .showAnnular()
-Simple usage with a label or with label and detail. Requires manual `hide()`.
+A blank Annular spinner. Hides automatically, upon `timeout` completion.
 
 ```javascript
 ProgressIndicator.showAnnular(false, 100000)
@@ -186,7 +196,7 @@ ProgressIndicator.showAnnular(false, 100000)
 
 
 #### .showAnnularWithLabel()
-Simple usage with a label or with label and detail. Requires manual `hide()`.
+An Annular spinner with a label. Hides automatically, upon `timeout` completion.
 
 ```javascript
 ProgressIndicator.showAnnularWithLabel(false, 50000, "Loading...")
@@ -205,7 +215,7 @@ ProgressIndicator.showAnnularWithLabel(false, 50000, "Loading...")
 ## Bar
 
 #### .showBar()
-Simple usage with a label or with label and detail. Requires manual `hide()`.
+A blank Bar indicator. Hides automatically, upon `timeout` completion.
 
 ```javascript
 ProgressIndicator.showBar(false, 100000)
@@ -223,7 +233,7 @@ ProgressIndicator.showBar(false, 100000)
 
 
 #### .showBarWithLabel()
-Simple usage with a label or with label and detail. Requires manual `hide()`.
+A Bar indicator with a label. Hides automatically, upon `timeout` completion.
 
 ```javascript
 ProgressIndicator.showBarWithLabel(false, 50000, "Loading...")
@@ -243,7 +253,7 @@ ProgressIndicator.showBarWithLabel(false, 50000, "Loading...")
 ## Others
 
 #### .showSuccess()
-Simple usage with a label or with label and detail. Requires manual `hide()`.
+A Success message with a small checkmark image. Requires manual `hide()`.
 
 ```javascript
 ProgressIndicator.showSuccess(false)
@@ -276,7 +286,7 @@ ProgressIndicator.showText(false, "text goes here", 'top')
 > -----------|----------|--------|-----
 > **dim**    |*BOOL*    |false   | Dim Background
 > **label**  |*STRING*  | *null*     | Label text
-> **position**  |*STRING*  | "bottom"     | Position of text 'top', 'center', 'bottom'
+> **position**|*STRING*  | 'bottom'     | Position of text **top** **center** **bottom**
 
 
 ```javascript
@@ -288,6 +298,8 @@ CHANGELOG
 ===========
 
 **1.0** - initial version supporting iOS
+
+
 
 CREDITS
 ============
@@ -318,4 +330,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
