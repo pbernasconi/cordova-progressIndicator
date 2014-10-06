@@ -26,6 +26,7 @@
         <source-file src="src/ios/MBProgressHUD.m"/>
         <header-file src="src/ios/ProgressIndicator.h"/>
         <source-file src="src/ios/ProgressIndicator.m"/>
+        <resource-file src="src/ios/ProgressIndicator.bundle"/>
     </platform>
 
     <!-- Android -->
