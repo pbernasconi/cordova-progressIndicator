@@ -33,7 +33,12 @@ iOS
 
 
 
-### 6. CREDITS
+### CREDITS
 
  - [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
  - [Cordova-ActivityIndicator](https://github.com/Initsogar/cordova-activityindicator)
+ - 
+ 
+#### License
+
+Apache license 2.0 - Use this plugin for any production / development needs, and if you'd like to make an attribution to me somewhere.
