@@ -28,8 +28,8 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
-    <feature name="ActivityIndicator">
-        <param name="ios-package" value="ActivityIndicator" />
+    <feature name="ProgressIndicator">
+        <param name="ios-package" value="ProgressIndicator" />
     </feature>
     <name>demo</name>
     <description>

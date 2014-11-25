@@ -22,7 +22,7 @@
                         },
                         {
                             "xml": "<feature name=\"ProgressIndicator\"><param name=\"ios-package\" value=\"ProgressIndicator\" /></feature>",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }
@@ -40,6 +40,9 @@
             "PACKAGE_NAME": "com.ionicframework.demo962822"
         },
         "org.pbernasconi.progressIndicator": {
+            "PACKAGE_NAME": "com.ionicframework.demo962822"
+        },
+        "org.pbernasconi.progressindicator": {
             "PACKAGE_NAME": "com.ionicframework.demo962822"
         }
     },

@@ -15,29 +15,56 @@ angular.module('starter', ['ionic'])
   .controller('AppCtrl', function ($scope, $timeout) {
     console.log('AppCtrl');
 
-    $scope.loadActivityIndicator = function (type) {
+    $scope.loadProgressIndicator = function (type) {
       switch (type) {
         case  'indeterminate-simple':
-          ActivityIndicator.show('indeterminate-simple', false);
+          ProgressIndicator.showSimple(true);
+          timeout();
           break;
         case  'indeterminate-label':
-          ActivityIndicator.show('indeterminate-label', false, 'custom Label');
+          ProgressIndicator.showSimpleWithLabel(false, 'custom Label');
+          timeout();
           break;
         case  'indeterminate-label-detail':
-          ActivityIndicator.show('indeterminate-label', false, 'custom Label', 'custom detail');
+          ProgressIndicator.showSimpleWithLabelDetail(false, 'custom Label', 'custom detail');
+          timeout();
           break;
         case  'determinate-simple':
-          ActivityIndicator.show('determinate-simple', false);
+          ProgressIndicator.showDeterminate(false);
+          break;
+        case  'determinate-simple-label':
+          ProgressIndicator.showDeterminateWithLabel(false, 100000, 'custom label');
           break;
         case  'determinate-annular':
-          ActivityIndicator.show('determinate-annular', false);
+          ProgressIndicator.showDeterminateAnnular(false);
+          break;
+        case  'determinate-annular-label':
+          ProgressIndicator.showDeterminateAnnularWithLabel(false, 50000, 'custom label');
           break;
         case  'determinate-bar':
-          ActivityIndicator.show('determinate-bar', false);
+          ProgressIndicator.showDeterminateBar(false, 100000);
+          break;
+        case  'determinate-bar-label':
+          ProgressIndicator.showDeterminateBarWithLabel(false, 100000, 'custom label');
           break;
         case 'success':
-          ActivityIndicator.show('success', false);
+          ProgressIndicator.showSuccess(false, 'success');
+          timeout();
           break;
+        case 'text-top':
+          ProgressIndicator.showText(false, 'text at the TOP', 'top');
+          timeout();
+          break;
+        case 'text-bottom':
+          ProgressIndicator.showText(false, 'text at the BOTTOM', 'bottom');
+          timeout();
+          break;
+      }
+
+      function timeout() {
+        $timeout(function () {
+          ProgressIndicator.hide();
+        }, 5000);
 
       }
     }

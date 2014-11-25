@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="org.pbernasconi.progressIndicator" version="1.0.0">
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        id="org.pbernasconi.progressindicator" 
+        version="1.1.0">
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
 
-    <name>ProgressIndicator</name>
+    <name>Progress Indicator</name>
     <description>Progress Indicator plugin for Cordova 3.X that allows you to show a loading spinner in your Cordova's app.</description>
     <author>Paolo Bernasconi</author>
     <keywords>progress,indicator,activity,loading,load,progressindicator</keywords>
     <license>Apache 2.0 License</license>
+    <repo>https://github.com/pbernasconi/cordova-progressIndicator.git</repo>
 
     <js-module src="www/progressIndicator.js" name="ProgressIndicator">
         <clobbers target="ProgressIndicator"/>

@@ -29,10 +29,10 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.pbernasconi.activityIndicator/www/activityIndicator.js",
-        "id": "org.pbernasconi.activityIndicator.ActivityIndicator",
+        "file": "plugins/org.pbernasconi.progressIndicator/www/progressIndicator.js",
+        "id": "org.pbernasconi.progressIndicator.ProgressIndicator",
         "clobbers": [
-            "ActivityIndicator"
+            "ProgressIndicator"
         ]
     }
 ];
@@ -42,7 +42,7 @@ module.exports.metadata =
     "com.ionic.keyboard": "1.0.2",
     "org.apache.cordova.console": "0.2.9",
     "org.apache.cordova.device": "0.2.10",
-    "org.pbernasconi.activityIndicator": "1.0.0"
+    "org.pbernasconi.progressIndicator": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

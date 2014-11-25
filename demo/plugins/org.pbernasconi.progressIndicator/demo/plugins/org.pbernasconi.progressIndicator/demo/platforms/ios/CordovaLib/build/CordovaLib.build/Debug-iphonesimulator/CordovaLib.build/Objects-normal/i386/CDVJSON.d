@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/paolob/Desktop/Projects/cordova-plugins/cordova-activityindicator/demo/platforms/ios/CordovaLib/Classes/CDVJSON.m \
-  /Users/paolob/Desktop/Projects/cordova-plugins/cordova-activityindicator/demo/platforms/ios/CordovaLib/Classes/CDVJSON.h
+  /Users/paolob/Desktop/Projects/cordova-plugins/PI-demo/platforms/ios/CordovaLib/Classes/CDVJSON.m \
+  /Users/paolob/Desktop/Projects/cordova-plugins/PI-demo/platforms/ios/CordovaLib/Classes/CDVJSON.h

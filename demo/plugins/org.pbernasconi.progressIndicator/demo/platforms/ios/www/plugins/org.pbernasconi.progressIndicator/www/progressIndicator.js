@@ -43,13 +43,13 @@ cordova.define("org.pbernasconi.progressIndicator.ProgressIndicator", function(r
     cordova.exec(null, null, "ProgressIndicator", "showDeterminateWithLabel", [dim, timeout, label]);
   },
 
-  showDeterminateAnnular: function (dim, timeout) {
+  showAnnular: function (dim, timeout) {
     dim = dim || false;
     timeout = timeout || 50000;
     cordova.exec(null, null, "ProgressIndicator", "showDeterminateAnnular", [dim, timeout]);
   },
 
-  showDeterminateAnnularWithLabel: function (dim, timeout, label) {
+  showAnnularWithLabel: function (dim, timeout, label) {
     dim = dim || false;
     timeout = timeout || 50000;
     label = label || "Please wait...";
@@ -57,14 +57,14 @@ cordova.define("org.pbernasconi.progressIndicator.ProgressIndicator", function(r
     cordova.exec(null, null, "ProgressIndicator", "showDeterminateAnnularWithLabel", [dim, timeout, label]);
   },
 
-  showDeterminateBar: function (dim, timeout) {
+  showBar: function (dim, timeout) {
     dim = dim || false;
     timeout = timeout || 50000;
 
     cordova.exec(null, null, "ProgressIndicator", "showDeterminateBar", [dim, timeout]);
   },
 
-  showDeterminateBarWithLabel: function (dim, timeout, label) {
+  showBarWithLabel: function (dim, timeout, label) {
     dim = dim || false;
     timeout = timeout || 50000;
     label = label || "Please wait...";

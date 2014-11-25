@@ -116,10 +116,10 @@
     
     
     if ([position isEqualToString:@"top"]) {
-        self.progressIndicator.yOffset = -230.f;
+        self.progressIndicator.yOffset = -150.f;
     }
     else if ([position isEqualToString:@"bottom"]) {
-        self.progressIndicator.yOffset = 180.f;
+        self.progressIndicator.yOffset = 200.f;
     }
     else {
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
