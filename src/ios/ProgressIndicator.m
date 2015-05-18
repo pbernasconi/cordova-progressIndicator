@@ -22,14 +22,18 @@ NSString *_commandId;
     self.progressIndicator = [MBProgressHUD showHUDAddedTo:self.webView.superview animated:YES];
     self.progressIndicator.mode = MBProgressHUDModeIndeterminate;
     
+    _commandId = command.callbackId;
+    UITapGestureRecognizer *HUDSingleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+    [self.progressIndicator addGestureRecognizer:HUDSingleTap];
+
     // Check if dim : true ? false
     if (dim == true) {
         self.progressIndicator.dimBackground = YES;
     }
     
     // Cordova success
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    // CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+    // [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 
@@ -53,14 +57,17 @@ NSString *_commandId;
     //self.progressIndicator.color =  [UIColor color:color];
     //HUD.color = [UIColor colorWithRed:0.23 green:0.50 blue:0.82 alpha:0.90];
     
+    _commandId = command.callbackId;
+    UITapGestureRecognizer *HUDSingleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+    [self.progressIndicator addGestureRecognizer:HUDSingleTap];
+
     // Check if dim : true ? false
     if (dim == true) {
         self.progressIndicator.dimBackground = YES;
     }
     
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-    
+    // CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+    // [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 

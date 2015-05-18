@@ -14,11 +14,17 @@ var ProgressIndicator = {
 
   },
 
-  showSimpleWithLabel: function (dim, label) {
+  showSimpleWithLabel: function (dim, label, onCancel) {
     dim = dim || false;
     label = label || "Please wait...";
 
-    cordova.exec(null, null, "ProgressIndicator", "showSimpleWithLabel", [dim, label]);
+    function onError(err) {
+      if (err === 'Abort') {
+        onCancel();
+      }
+    }
+
+    cordova.exec(null, onError, "ProgressIndicator", "showSimpleWithLabel", [dim, label]);
   },
 
   showSimpleWithLabelDetail: function (dim, label, detail, onCancel) {
