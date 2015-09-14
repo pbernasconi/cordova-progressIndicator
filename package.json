@@ -1,0 +1,36 @@
+{
+  "name": "cordova-plugin-progressindicator",
+  "author": "Paolo Bernasconi",
+  "version": "1.0.0",
+  "description": "cordova plugin to show a native progress indicator",
+  "cordova": {
+    "id": "cordova-plugin-progressindicator",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "progress",
+    "indicator",
+    "activity",
+    "load",
+    "progress-indicator",
+    "progressindicator",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-amazon-fireos",
+    "cordova-ios"
+  ],
+  "engines": [{
+    "name": "cordova",
+    "version": ">=3.1.0"
+  }],
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pbernasconi/cordova-progressIndicator.git"
+  },
+  "homepage": "http://paolobernasconi.com/cordova-progressIndicator/"
+}
