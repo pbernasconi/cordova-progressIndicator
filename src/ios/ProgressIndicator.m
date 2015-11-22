@@ -405,6 +405,7 @@
 		return;
 	}
 	[self.progressIndicator hide:YES];
+    self.progressIndicator = nil;
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
