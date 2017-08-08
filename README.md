@@ -12,8 +12,10 @@ There are several types of indicators available:
 
 # Install
 
-```
-npm install cordova-plugin-progressindicator
+```bash
+cordova plugin add cordova-plugin-progressindicator
+# or
+ionic cordova plugin add cordova-plugin-progressindicator
 ```
 
 # [View the Docs](http://pbernasconi.github.io/cordova-progressIndicator/)
