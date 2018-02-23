@@ -35,7 +35,7 @@
 
     <!-- Android -->
     <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
             <feature name="ProgressIndicator">
                 <param name="android-package" value="org.apache.cordova.progressindicator.ProgressIndicator"/>
             </feature>
